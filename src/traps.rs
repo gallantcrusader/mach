@@ -1,6 +1,7 @@
 //! This module corresponds to `mach/mach_traps.h`.
 use kern_return::kern_return_t;
 use port::{mach_port_name_t, mach_port_t};
+use mach_types::host_t;
 
 extern "C" {
     static mach_task_self_: mach_port_t;
@@ -9,6 +10,7 @@ extern "C" {
         pid: ::libc::c_int,
         tn: *mut mach_port_name_t,
     ) -> kern_return_t;
+    pub fn mach_host_self() -> host_t;
 }
 
 pub unsafe fn mach_task_self() -> mach_port_t {
