@@ -501,4 +501,4 @@ warning: `extern` block uses type `[mach_vm_read_entry; 256]`, which is not FFI-
    = note: `#[warn(improper_ctypes)]` on by default
 
 warning: `mach` (lib) generated 40 warnings (run `cargo fix --lib -p mach` to apply 39 suggestions)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.20s
+    Finished dev [unoptimized + debuginfo] target(s) in 2.25s
