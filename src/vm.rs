@@ -61,7 +61,7 @@ extern "C" {
 
     pub fn mach_vm_read_list(
         target_task: vm_task_entry_t,
-        data_list: mach_vm_read_entry_t,
+        data_list: *mut mach_vm_read_entry_t,
         count: natural_t,
     ) -> kern_return_t;
 

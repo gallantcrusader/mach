@@ -5,6 +5,7 @@ use machine::cpu_type_t;
 use machine::CPU_STATE_MAX;
 use vm_types::integer_t;
 use vm_types::natural_t;
+use core::mem::size_of;
 
 use message::mach_msg_type_number_t;
 
@@ -23,9 +24,8 @@ pub const HOST_LOAD_INFO: c_uint = 1;
 pub const HOST_VM_INFO: c_uint = 2;
 pub const HOST_CPU_LOAD_INFO: c_uint = 3;
 
-extern "C" {
-    pub static HOST_CPU_LOAD_INFO_COUNT: mach_msg_type_number_t;
-}
+
+pub static HOST_CPU_LOAD_INFO_COUNT: mach_msg_type_number_t = (size_of::<host_cpu_load_info_data_t>() / size_of::<integer_t>()) as mach_msg_type_number_t;
 
 
 pub const HOST_INFO_MAX: c_uint = 1024;
