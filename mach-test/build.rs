@@ -336,7 +336,7 @@ fn main() {
     });
 
     // Include the directory where the header files are defined
-    cfg.include("/usr/include");
+    cfg.include("/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Headers");
 
     // Generate the tests, passing the path to the `*-sys` library as well as
     // the module to generate.
